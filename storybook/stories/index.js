@@ -8,53 +8,41 @@ import {linkTo} from '@storybook/addon-links';
 
 import Button from './Button';
 import CenterView from './CenterView';
-import Welcome from './Welcome';
 import {CircleImage} from "./CircleView/CircleImage";
 
 const imgSource = "https://raw.githubusercontent.com/shanerudolfworktive/ScalableLayoutTutorial/master/champion.png";
 
 storiesOf('Core', module)
     .addDecorator(withKnobs)
-    .add('to Storybook', () => <Welcome showApp={linkTo('Button')}/>)
-    .add('circleImage - red border', () =>
-        <CircleImage imageSource={imgSource}
-                     borderColor={text("borderColor", "#999")}
-                     backgroundColor={text("backgroundColor", "#eee")}
-                     borderWidth={number("borderWidth", 3)}/>)
+    .add('ExpandableTextView', () => (<View />))
+    .add('TableView', () => (<View />))
+    .add('CircleImage', () =>
+        <CircleImage
+            imageSource={imgSource}
+            borderColor={text("borderColor", "#999")}
+            backgroundColor={text("backgroundColor", "#eee")}
+            borderWidth={number("borderWidth", 3)}/>)
 
 
 storiesOf('FaceBookApp/shared', module)
     .addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
-    .add('rounded button', () => (
-        <View />
-    ))
-    .add('toolBar', () => (
-        <View />
-    ));
+    .add('ToolBar', () => (<View />))
+    .add('TimeLineCard', () => (<View />))
+    .add('Footer', () => (<View />));
 
 storiesOf('FaceBookApp/LoginScene', module)
     .addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
-    .add('login button', () => (
-        <View />
-    ))
-    .add('userName', () => (
-        <View />
-    ))
-    .add('footer', () => (
-        <View />
-    ));
+    .add('LoginButton', () => (<View />))
+    .add('UserNameField', () => (<View />));
+
+storiesOf('FaceBookApp/SettingScene', module)
+    .addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
+    .add('SettingButton', () => (<View />))
 
 storiesOf('TwitterApp/shared', module)
     .addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
-    .add('rounded button', () => (
-        <View />
-    ))
-    .add('toolBar', () => (
-        <View />
-    ))
-    .add('footer', () => (
-        <View />
-    ));
+    .add('RoundedButton', () => (<View />))
+    .add('ToolBar', () => (<View />))
 
 storiesOf('TwitterApp/LoginScene', module)
     .addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
