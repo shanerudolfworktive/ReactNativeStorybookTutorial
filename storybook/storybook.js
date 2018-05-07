@@ -33,6 +33,7 @@ class StorybookUIHMRRoot extends Component {
         this.setState({width: "41.4%", height: "73.6%"});
     };
 
+    //ViewPort for demo only, not production ready!!!
     render() {
         const {width, height, aspectRatio} = this.state;
         return <View style={{width, height, aspectRatio}}>
