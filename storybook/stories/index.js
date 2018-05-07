@@ -23,7 +23,6 @@ storiesOf('Core', module)
             backgroundColor={text("backgroundColor", "#eee")}
             borderWidth={number("borderWidth", 3)}/>)
 
-
 storiesOf('FaceBookApp/shared', module)
     .addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
     .add('ToolBar', () => (<View />))
